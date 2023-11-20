@@ -28,10 +28,10 @@ Il n'y a que peu de commandes admins, et toutes celles si sont simples d'utilisa
 | Commande | Description | Permission |
 |----------|----------|----------|
 | /token  | Permet de voir son nombre de token.  | tokenmanager.viewtoken | 
-| /token pay <joueur> <montant> | Permet de payer des tokens a des joueurs. | tokenmanager.pay | 
-| /atoken <give|withdraw|set|view|reset> <joueur> <montant> | Commandes d'administration du plugin | tokenmanager.admintoken |
+| /token pay | Permet de payer des tokens a des joueurs. | tokenmanager.pay | 
+| /atoken | Commandes d'administration du plugin | tokenmanager.admintoken |
 | /treload | Permet de recharger la configuration du plugin | tokenmanager.reload |
-| /ttoken trade <joueurs> <tokens> <money> | Permet d'effectuer des trades sécurisés entre argent vault et tokens | tokenmanager.trade |
+| /ttoken | Permet d'effectuer des trades sécurisés entre argent vault et tokens | tokenmanager.trade |
 
 # L'entiéreté de la configuration est expliqué dessus, ainsi que toute la liste des placeholders locaux utilisables.
 
