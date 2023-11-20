@@ -1,0 +1,114 @@
+#Notes:
+#On a next time, a lot of intern placeholder can be used on your messages. More are always same, but some are unique and precise on the top of the sentance. 
+#PS: We will specify the palceholders that can be used on each sentence.
+
+#Prefix of the plugin
+prefix: "&7[&cTokenManager&7] "
+#Define if you want to use the prefix 
+use-prefix: true
+#Define if you want to use a database or local file.
+use-database: false
+#Define if you want to allow admon commands on the console or not.
+console-admin-command: true
+#Define if you want to use the welcome message sent on the tchat on all of your new players. PS : This is a message visible uniquely by the new player, not on a global chat.
+use-welcome-message: true
+#Define if you want to notify players when an admin uses an admin command on the player in question
+notify-player-on-admin-commands: true
+#Define if you want to use the tokens trade system.
+trade-system-enable: true
+#Define the number of tokens given when a new player join your server
+initial-tokens: 20
+#Define the maximum time for a trade request ( on seconds )
+time-to-trade-is-valid: 60
+#Define the name of the custom money ( used only on the logs )
+token-name: "tokens"
+#DO NOT TOUCH !
+version: 1.0.0
+#In this category, define if you want to use différent loggings system.
+logging-system: 
+  #If it's defined to false, all logs will be not working.
+  use-logs: true
+  #If it's define to true, when use-logs are define to false, the plugin delete all logs files from the plugin.
+  delete-unuse-logsfile: false
+  enable-pay-log: true
+  enable-admin-log: true
+  enable-trade-log: true
+#Enter here all you'r database informations if you want to use database ( don't forget to define use-database to true ! )
+database:
+  host: "yourdatabaseip"
+  port: 3306
+  database: "yourdatabase"
+  username: "yourdatabaseusername"
+  password: "yourdatabasepassword"
+  tableName: "user"
+messages:
+#here, the terms used in the names of the different strings define:
+#receiver : the name of the person who received the trade request/ tokens
+#action + er : the name of the staff who made the action
+#For correctly use all messages, you can use Google Translate for translate all messages in english or in your language. Default language : French ( Because the dev is french :d )
+  #Global Commands Messages
+  no-permission: "&cVous n'avez pas la permission d'utiliser cette commande."
+  #avaible placeholders : %receiver% > nickname of the person to whom the executor of the command tried to send tokens
+  player-not-online: "&cLe joueur %receiver% n'est pas connecté sur le serveur."
+  invalid-amount: "&cMerci d'entrer un montant valide ( Montant supérieur a 0 )"
+  no-enough-money: "&cVous n'avez pas assez de token pour payer la somme indiqué."
+  #Player Commands Messages
+  #avaible placeholders : %balance% > Number of players's tokens
+  balance: "&2Vous avez actuellement %balance% tokens !"
+  #avaible placeholders : %amount% > amount payed | %receiver% > Person who receives tokens
+  payement-successful: "&2Vous avez correctement payé %amount% tokens à %receiver% !"
+  #avaible placeholders : %amount% > amount payed | %sender% > Person who sent tokens
+  recieve-payement: "&2Vous venez de recevoir %amount% tokens de la part de %sender% !"
+  can-pay-yourself: "&cVous ne pouvez pas vous payer vous même !"
+  #avaible placeholders : %amount% > number of tokens gift for the new player | %player% > Pseudo of new player
+  new-user-message: "&5Bienvenue sur notre serveur %player% ! Comme cadeau de bienvenue, tu as recu %amount% tokens. Profites en bien !"
+  #Admin Commands Messages
+  #avaible placeholders : %name% > Name of the player that admin can try to make an action
+  unknow-player: "&cLe joueur %name% ne c'est jamais connecté sur le serveur ou n'est pas reconnu dans les fichiers du plugin."
+  unknow-interaction: "&cInteraction inconnue. Utilisez set,withdraw,give,reset,view."
+  #avaible placeholders : %amount% > Number of tokens gift to player | %player% > Name of the given player
+  give-message: "&2Vous avez donné %amount% tokens à %player%"
+  #avaible placeholders : %giver% > Pseudo of the admin that give a tokens | %amount% > amount of tokens given.
+  give-message-receiver: "&2Le staff %giver% vous à donné %amount% tokens."
+  #avaible placeholders : %player% > Name of the target | %amount% > Money precise in command | %current% > Amount of player's tokens
+  insufficient-token: "&cLe joueur %player% n'a pas %amount% tokens pour effectuer cette action. Tokens du joueur: %current% tokens."
+  #avaible placeholders : %amount% > Number of tokens withdraw | %player% > Name of the withdrawed player
+  withdraw-message: "&2Vous avez enlevé %amount% tokens du compte de %player%."
+  #avaible placeholders : %withdrawer% > Name of the staff that withdraw tokens | %amount% > Number of tokens withdraw
+  withdraw-message-receiver: "&2Le staff %withdrawer% vous à retiré %amount% tokens."
+  #avaible placeholders: %player% > Name of the target player | %amount% > Number of player's token
+  view-player-token: "&2Le compte de %player% à %amount% tokens."
+  #avaible placeholders : %player% > Name of the resetted player | %amount% > Number of token setted on the player's account
+  set-message: "&2Vous avez mis le compte de %player% à %amount% tokens."
+  #avaible placeholders : %setter% > Name of the staff that set the player account | %amount% > Amount of tokens set on the player account.
+  set-message-receiver: "&2Le staff %setter% viens de mettre votre compte à %amount% tokens."
+  #avaible placeholders : %player% > Name of the resetted player
+  reset-token-message: "&2Vous avez correctement reset le compte de %player%, celui si posséde maintenant le nombre de tokens par défaut."
+  #avaible placeholders : %resetter% > Name of the staff can reset the player's account
+  reset-token-message-receiver: "&2Le staff %resetter% viens de reset les tokens de votre compte aux valeurs par défaut."
+  #avaible placeholders : %version% > Plugin version
+  reload-message: "&2Le plugin TokenManager version %version% a été rechargé avec succès !"
+  #Trade Commands 
+  already-request: "&2Vous avez déjà une requête de trade en cours ou l'autre joueur à déjà une requête de trade en cours."
+  trade-system-disable: "&cLe systéme de trade de tokens est désactivé sur ce serveur."
+  can-trade-yourself: "&cVous ne pouvez pas trade avec vous même."
+  #avaible placeholders : %sender% > Name of the sender of tokens | %token% > Number of token can sender sent to receiver | %money%  > Number of money can receiver can lost | %seconds% > Seconds left before the end of trade.
+  receive-trade-request: "&eVous venez de recevoir une demande de trade de tokens de %sender%. Valeur du trade : &2&l+ &e%token% Tokens | &4&l- &e%money% $. Tapez /ttoken accept ou /ttoken deny dans les %seconds% prochaines secondes."
+  #avaible placeholders : %receiver% > Name of the receiver of money | %token% > Number of token can sender lost | %money% > Number of money can sender win | %seconds% > Seconds left before the end of trade
+  send-trade-request: "&eVous venez d'envoyer une demande de trade de tokens a %receiver%. Valeur du trade : &2&l+ &e%money%$ | &4&l- &e%token% tokens. En attente de la réponse de %receiver% dans les prochaines %seconds% secondes."
+  any-trade: "&cVous n'avez aucun trade en attente de réponse."
+  trade-expirated: "&cLe trade a expiré."
+  #avaible placeholders : %money% > Number of money necessary
+  receiver-no-enought-money: "&cVous n'avez pas assez d'argent pour effectuer le trade. Argent nécessaire : %money%."
+  #avaible placeholders : %target% > Name of the target player
+  target-no-enough-money: "&c%target% ne posséde pas assez d'argent pour effectuer le trade. Celui ci a été annulé."
+  #avaible placeholders : %token% > Number of tokens | %money% > Number of money
+  receiver-trade-accpeted: "&2Trade accepté ! Vous avez reçu %token% tokens et vous avez perdu %money% $."
+    #avaible placeholders : %token% > Number of tokens | %money% > Number of money
+  sender-trade-accpeted: "&2Trade accepté ! Vous avez reçu %money%$ et vous avez perdu %token% tokens."
+  sender-deny-message: "&cLe joueur avec qui vous avez voulu faire un trade a refusé la demande."
+  receiver-deny-message: "&cVous avez correctement refusé le trade."
+
+#Note for trade : 
+#The trading system works like this: The player who sends the request is always the person who will GIVE the tokens and receive the money, so the person who receives the request will receive the tokens and give the money.
+#PS: Sorry for my English, I wrote this little paragraph using Google translate

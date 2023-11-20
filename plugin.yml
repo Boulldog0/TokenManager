@@ -1,0 +1,21 @@
+name: TokenManager
+author: Boulldogo
+description: Plugin de token complet
+version: 1.0
+softdepends:
+- PlaceholderAPI
+- Vault
+main: fr.Boulldogo.TokenManager.Main
+commands:
+    token:
+      description: Commandes de token de base
+      aliases: [tokens, tk]
+    atoken:
+      description: Commandes admin de token
+      aliases: [atk, atokens, admintoken, admintokens]
+    treload:
+      description: Permet de reload le plugin
+      aliases: [tr, tokenreload, tokensreload]
+    ttoken:
+      description: Permet de faire des trades de tokens
+      aliases: [tt, tradetoken, tradetokens, tradet]
